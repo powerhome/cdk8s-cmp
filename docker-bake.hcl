@@ -16,6 +16,6 @@ target "python" {
     PYTHON_TAG_SHA = "${PYTHON_TAG}@sha256:${PYTHON_SHA}"
   }
   tags = [
-    "powerhome/cdk8s-cmp-python:${PYTHON_TAG}"
+    "ghcr.io/powerhome/cdk8s-cmp-python:${PYTHON_TAG}"
   ]
 }
