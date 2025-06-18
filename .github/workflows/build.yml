@@ -8,6 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  PUSH: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
 
 jobs:
   bake:
@@ -26,4 +27,6 @@ jobs:
       - name: Build and Push
         uses: docker/bake-action@37816e747588cb137173af99ab33873600c46ea8 # v6
         with:
-          push: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+          push: ${{ env.PUSH == 'true' }}
+        env:
+          BUILD_VERSION: ${{ env.PUSH == 'true' && 'main' || 'pr' }}
