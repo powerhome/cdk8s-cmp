@@ -5,4 +5,4 @@ Builds images for use with a custom 'cdk8s' ArgoCD Config Management Plugin.
 
 ```sh
 docker bake
-`
+```
