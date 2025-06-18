@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ConfigManagementPlugin
+metadata:
+  name: cdk8s-python
+spec:
+  discover:
+    fileName: ./cdk8s.yaml
+  generate:
+    args:
+    - --stdout
+    command:
+    - cdk8s
+    - synth
+  init:
+    args:
+    - import
+    command:
+    - cdk8s
+  preserveFileMode: false
+  provideGitCreds: true
+  version: "3.13"
