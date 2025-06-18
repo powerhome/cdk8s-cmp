@@ -1,2 +1,8 @@
 # cdk8s-cmp
-Builds cdk8s images for use with ArgoCD
+Builds images for use with a custom 'cdk8s' ArgoCD Config Management Plugin.
+
+## Building Locally
+
+```sh
+docker bake
+`
