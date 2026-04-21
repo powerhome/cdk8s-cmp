@@ -6,6 +6,10 @@ variable "PYTHON_VERSION" {
   default = "3.13.5"
 }
 
+variable "RUBY_VERSION" {
+  default = "0.10.0"
+}
+
 variable "PYTHON_BASE_VARIANT" {
   default = "slim-bookworm"
 }
@@ -25,5 +29,13 @@ target "python" {
   }
   tags = [
     "ghcr.io/powerhome/cdk8s-cmp-python:${BUILD_VERSION}-${PYTHON_VERSION}"
+  ]
+}
+
+target "krane" {
+  context = "docker/python"
+
+  tags = [
+    "ghcr.io/powerhome/krane-argo-cmp:${BUILD_VERSION}"
   ]
 }
