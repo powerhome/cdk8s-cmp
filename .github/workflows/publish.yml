@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and Push
-        uses: docker/bake-action@v4
+        uses: docker/bake-action@018cb6412ab401ebaa809aa5f85966b74628600f # v7
         with:
           push: true
         env:
